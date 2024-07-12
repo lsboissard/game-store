@@ -67,8 +67,7 @@ app
       updatedGame.ReleaseDate
     );
 
-    Results.NoContent();
-
+    return Results.NoContent();
   })
   .WithName("UpdateGame");
 
@@ -76,7 +75,8 @@ app
 app
   .MapDelete("games/{id}", (int id) => {
     games.RemoveAll(game => game.Id == id);
-    Results.NoContent();
+
+    return Results.NoContent();
   })
   .WithName("DeleteGame");
 
