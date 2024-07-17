@@ -1,0 +1,7 @@
+# Folders to ignore in GameStore.Api
+GameStore.Api/obj/**
+GameStore.Api/bin/**
+GameStore.Api/Backup/
+GameStore.Api/Build/
+GameStore.Api/App_Data/
+GameStore.Api/App_Code/
