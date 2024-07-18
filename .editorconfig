@@ -1,12 +1,90 @@
-# This file is the top-most EditorConfig file
+# .editorconfig file
+
 root = true
 
-# All Files
+# All files
 [*]
+charset = utf-8
 indent_style = space
 indent_size = 2
-insert_final_newline = false
-trim_trailing_whitespace = false
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 100
 
+# C# files
 [*.cs]
+dotnet_naming_rule.private_field_naming.symbols = private_fields
+dotnet_naming_rule.private_field_naming.style = _camelCase
+dotnet_naming_rule.private_field_naming.severity = error
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private, protected, internal, protected_internal
+
+dotnet_naming_style._camelCase.capitalization = camel_case
+dotnet_naming_style._camelCase.required_prefix = _
+
+dotnet_naming_rule.local_variable_naming.symbols = local_variables
+dotnet_naming_rule.local_variable_naming.style = camelCase
+dotnet_naming_rule.local_variable_naming.severity = error
+
+dotnet_naming_symbols.local_variables.applicable_kinds = local, parameter
+dotnet_naming_symbols.local_variables.applicable_accessibilities = *
+
+dotnet_naming_style.camelCase.capitalization = camel_case
+
+dotnet_naming_rule.class_naming.symbols = classes
+dotnet_naming_rule.class_naming.style = PascalCase
+dotnet_naming_rule.class_naming.severity = error
+
+dotnet_naming_symbols.classes.applicable_kinds = class, method, enum, property, field, namespace
+
+dotnet_naming_style.PascalCase.capitalization = pascal_case
+
+dotnet_naming_rule.interface_naming.symbols = interfaces
+dotnet_naming_rule.interface_naming.style = prefixPascalCase
+dotnet_naming_rule.interface_naming.severity = error
+
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+
+dotnet_naming_style.prefixPascalCase.capitalization = pascal_case
+dotnet_naming_style.prefixPascalCase.required_prefix = I
+
+# Order of using directives
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+
+# New line preferences
 csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+
+# Braces preferences
+csharp_prefer_braces = true
+
+# Space preferences
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_after_cast = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_after_comma = true
+csharp_space_after_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_after_binary_operators = true
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses_expression = false
+csharp_space_between_parentheses_control_flow_statements = false
+
+# Wrapping preferences
+csharp_preserve_single_line_statements = false
+csharp_keep_statements_on_single_line = false
+csharp_wrap_before_binary_operator = true
+
+# Member order preferences
+dotnet_sort_members_by_kind = true
+
+# Additional whitespace preferences
+csharp_space_after_method_declaration_name = false
+csharp_space_after_method_call_name = false
+csharp_space_before_open_square_bracket = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
